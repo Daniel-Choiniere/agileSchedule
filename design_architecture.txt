@@ -1,10 +1,15 @@
 Employee Schedule restAPI modeled after Homebase
 
-We need to initialize NPM with nom init -y, which will create a package.json file where we can store all out necessary dependencies
+Initialize NPM with nom init -y, which will create a package.json file where we can store all out necessary dependencies
+    
+Install all necessary npm dependencies.
 
-we will need at least four files to build out API
+Need to create at least four files to build out the API
     - index.js - we will connect to our mongoDB database using Mongoose, parse the API data into JSON, intialize routes, error handling, and set up port to listen for requests.
     - api.js - here we will create all of our routes for the API. GET, POST, PUT, and DELETE.
     - employee.js - this is where we will define out database schema, with the help of Mongoose. 
     - index.html - front-end for user interaction with the database. For adding, or deleting employees or updating there schedule
+ 
+ EPICS
+    - View individual employee schedules by day, week, or month
     
