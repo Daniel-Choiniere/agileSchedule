@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // we need to get the Employee model from our schema file
-const Employee = require('./employees')
+const Employee = require('./employee');
 
             // GET ROUTES
 // GET route, get a list of all the employees from the database

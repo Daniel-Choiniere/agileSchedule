@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Hour Tracker</title>
+    <meata charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    
+    <br><br>
+    <h1>Employees</h1>
+    <button id="button">Employees</button>
+    <div id="users"></div>
+    
+    
+    <script>
+        document.getElementById('button').addEventListener('click', loadEmployees);
+        
+        // Load Employees
+        function loadEmployees() {
+            console.log("hello");
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://cors.io/?https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/', true);
+            
+            xhr.onload = function() {
+                if (this.status == 200) {
+                    var employees = JSON.parse(this.responseText);
+            
+                    var output = "";
+                    for (var i in employees){
+                        output += 
+                            '<div class="user">' +
+                            '<ul>' +
+                            '<li>ID: '+ employees[i].id +'</li>' +
+                            '<li>Login: '+ employees[i].login +'</li>' +
+                            '</ul>' +
+                            '</div>';
+                    }
+                    document.getElementById('users').innerHTML = output;
+                }    
+            };
+        xhr.send();        
+        }   
+        
+    </script>
+</body>
+
+</html>

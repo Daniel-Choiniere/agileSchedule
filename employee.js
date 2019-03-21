@@ -11,10 +11,10 @@ const employeeSchema = new Schema({
         required:[true, 'ID field is required']
     },
     timeIn: {
-        type: Number
+        type: String,
     },
     timeOut: {
-        type: Number
+        type: String
     }
 });
 

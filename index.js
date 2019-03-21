@@ -1,7 +1,6 @@
-
 const express = require('express');
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
@@ -10,7 +9,7 @@ mongoose.set('useFindAndModify', false);
 const app = express();
 
 // connect to the mongodb database using mongoose
-mongoose.connect('mongodb://localhost/employee');
+mongoose.connect('mongodb://localhost/employee', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
