@@ -50,7 +50,7 @@ router.delete('/employees/:id', function(req, res, next){
     // using this mongoose method it will find the specified id (i.e. req.params.id) and return a promise (.then) that will return to us the removed ID (which we can use as a parameter) and fire a function only once the id is found and removed. 
     Employee.findByIdAndRemove({_id: req.params.id}).then(function(employee){
         // send back to the user the ID (employee) that has been removed
-        res.send("HEllo there" + employee);
+        res.send("Helloo there" + employee);
     });
 });
 
