@@ -7,7 +7,7 @@ const employeeSchema = new Schema({
         type: String
     },
     id: {
-        type: String,
+        type: Number,
         required:[true, 'ID field is required']
     },
     timeIn: {

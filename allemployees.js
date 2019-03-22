@@ -1,10 +1,10 @@
         document.getElementById('button').addEventListener('click', loadEmployees);
         
-        // Update an employees profile with a check in
-        function checkIn() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'https://cors.io/?https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/', true);
-        }
+        // // Update an employees profile with a check in
+        // function checkIn() {
+        //     var xhr = new XMLHttpRequest();
+        //     xhr.open('GET', 'https://cors.io/?https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/', true);
+        // }
         
         // Load All Employees
         function loadEmployees() {
