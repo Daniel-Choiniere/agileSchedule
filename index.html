@@ -21,13 +21,17 @@
     <button id="individualEmployee">Search for an Employee</button>
     
     <h1>Add New Employee</h1>
-    <form method="post" action"/addEmployee">
-        First Name: <input id="fname" type="text" name="fname"><br>
-        Last Name: <input id="lname" type="text" name="lname"><br>
-        Hourly Rate: <input id="salary" type="number" name="salary"><br>
+    <form method="POST" action="http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
+        <label>First Name:<input type="text" name="fname" required></label>
+        <br>
+        <label>Last Name:<input type="text" name="lname" required></label>
+        <br>
+        <label>Hourly Rate:<input type="text" name="payrate" required></label>
+        <br>
+        <input type="submit" value="Submit">
     </form>
-    <button onclick="createEmployee()">Create New Employee Profile</button>
-        
+    
+    
     <h1>Modify Employee</h1>
     <form method="post" action"/modifyEmployee">
         First Name: <input id="fnameChange" type="text" name="fnameChange"><br>
@@ -37,7 +41,7 @@
     <button onclick="createEmployee()">Create New Employee Profile</button>
     
     <h1>Remove Employee</h1>
-    <form method="delete" action"/deleteEmployee">
+    <form method="DELETE" action"/deleteEmployee">
         ID: <input id="id" type="number" name="id"><br>
     </form>
     <button onclick="deleteEmployee()">Remove Employee</button>

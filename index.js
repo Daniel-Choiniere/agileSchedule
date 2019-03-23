@@ -1,5 +1,7 @@
 const express = require('express');
 
+const Employee = require('./employee');
+
 const bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
@@ -13,11 +15,21 @@ mongoose.connect('mongodb://localhost/employee', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // intialize routes
 app.use('/api', require('./api'));
 
+app.post("/employees", (req, res) => {
+    var myData = new Employee(req.body);
+    myData.save()
+        .then(item => {
+            res.send("item saved to the database");
+        })
+        .catch(err => {
+            res.status(400).send('unable to save to the database');
+        });
+});
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
