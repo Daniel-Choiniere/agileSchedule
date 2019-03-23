@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Employee Hour Tracker</title>
@@ -9,10 +10,53 @@
 
 <body>
     <br><br>
-    <h1>Employees</h1>
-    <button id="button">All Employees</button>
-    <div id="users"></div>
+    <h1>View Current Employees</h1>
+    <button id="allEmployeeButton">View All Employees</button>
+    
+    <h1>Search Employee</h1>
+    <form method="post" action"/addEmployee">
+        Last Name: <input id="lname" type="text" name="lname"><br>
+        ID: <input id="idSearch" type="number" name="idSearch"><br>
+    </form>
+    <button id="individualEmployee">Search for an Employee</button>
+    
+    <h1>Add New Employee</h1>
+    <form method="post" action"/addEmployee">
+        First Name: <input id="fname" type="text" name="fname"><br>
+        Last Name: <input id="lname" type="text" name="lname"><br>
+        Hourly Rate: <input id="salary" type="number" name="salary"><br>
+    </form>
+    <button onclick="createEmployee()">Create New Employee Profile</button>
+        
+    <h1>Modify Employee</h1>
+    <form method="post" action"/modifyEmployee">
+        First Name: <input id="fnameChange" type="text" name="fnameChange"><br>
+        Last Name: <input id="lnameChange" type="text" name="lnameChange"><br>
+        Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
+    </form>
+    <button onclick="createEmployee()">Create New Employee Profile</button>
+    
+    <h1>Remove Employee</h1>
+    <form method="delete" action"/deleteEmployee">
+        ID: <input id="id" type="number" name="id"><br>
+    </form>
+    <button onclick="deleteEmployee()">Remove Employee</button>
 
+    
+<script>
+    function createEmployee() {
+        var fname = document.getElementById("fname").value;
+        document.getElementById("users").innerHTML = fname;
+        
+        var lname = document.getElementById("lname").value;
+        document.getElementById("users2").innerHTML = lname;
+    }
+</script>
+    
+    <div id="users"></div>
+    <div id="users2"></div>
+    
+    <script type="text/javascript" src="./individualemployee.js"></script>
     <script type="text/javascript" src="./allemployees.js"></script>
 </body>
 

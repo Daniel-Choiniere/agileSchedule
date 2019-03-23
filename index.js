@@ -18,6 +18,12 @@ app.use(bodyParser.json());
 // intialize routes
 app.use('/api', require('./api'));
 
+
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+
+
 // ERROR handling
 app.use(function(err, req, res, next) {
     // log the error to the console
