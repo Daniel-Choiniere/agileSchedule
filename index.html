@@ -14,11 +14,11 @@
     <button id="allEmployeeButton">View All Employees</button>
     
     <h1>Search Employee</h1>
-    <form method="get" action"/addEmployee">
+    <form method="GET" action"http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/:lname">
         Last Name: <input id="lname" type="text" name="lname"><br>
         ID: <input id="idSearch" type="number" name="idSearch"><br>
+        <input type="submit" value="Search Employee">
     </form>
-    <button id="individualEmployee">Search for an Employee</button>
     
     <h1>Add New Employee</h1>
     <form method="POST" action="http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
@@ -28,23 +28,23 @@
         <br>
         <label>Hourly Rate:<input type="text" name="payrate" required></label>
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create New Employee Profile">
     </form>
     
     
     <h1>Modify Employee</h1>
-    <form method="post" action"/modifyEmployee">
+    <form method="POST" action"/modifyEmployee">
         First Name: <input id="fnameChange" type="text" name="fnameChange"><br>
         Last Name: <input id="lnameChange" type="text" name="lnameChange"><br>
         Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
+        <input type="submit" value="Modify Employee Profile">
     </form>
-    <button onclick="createEmployee()">Create New Employee Profile</button>
     
     <h1>Remove Employee</h1>
-    <form method="DELETE" action"/deleteEmployee">
+    <form method="DELETE" action"http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/5c965e3db442020f1abdd068">
         ID: <input id="id" type="number" name="id"><br>
+        <input type="submit" value="Remove employee">
     </form>
-    <button onclick="deleteEmployee()">Remove Employee</button>
 
     
 <script>
@@ -60,7 +60,6 @@
     <div id="users"></div>
     <div id="users2"></div>
     
-    <script type="text/javascript" src="./individualemployee.js"></script>
     <script type="text/javascript" src="./allemployees.js"></script>
 </body>
 

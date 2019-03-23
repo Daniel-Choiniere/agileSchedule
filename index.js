@@ -20,20 +20,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // intialize routes
 app.use('/api', require('./api'));
 
-app.post("/employees", (req, res) => {
-    var myData = new Employee(req.body);
-    myData.save()
-        .then(item => {
-            res.send("item saved to the database");
-        })
-        .catch(err => {
-            res.status(400).send('unable to save to the database');
-        });
-});
+// app.post("/employees", (req, res) => {
+//     var myData = new Employee(req.body);
+//     myData.save()
+//         .then(item => {
+//             res.send("item saved to the database");
+//         })
+//         .catch(err => {
+//             res.status(400).send('unable to save to the database');
+//         });
+// });
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 
 // ERROR handling
