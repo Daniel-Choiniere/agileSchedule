@@ -25,27 +25,12 @@ router.get('/employees/:id', function(req, res, next){
 // POST route, add a new employee to the database
 router.post('/employees', function(req, res, next){
     // create a new instance of a employee record
-
     Employee.create(req.body).then(function(employee){
         // sends a JSON response  back to the user who requested the information so they have a confirmations that data is in the database
         res.send(employee);
         // if an error is found (i.e. no required name property sent with db data) it will catch it and run the next function
     }).catch(next);
 });
-
-
-router.post("/employees", (req, res) => {
-    var myData = new Employee(req.body);
-    myData.save()
-        .then(item => {
-            res.send("Name saved to database");
-        })
-        .catch(err => {
-            res.status(400).send("Unable to save to database");
-        });
-});
-
-
 
 
 // update existing data in the database
@@ -69,5 +54,7 @@ router.delete('/employees/:id', function(req, res, next){
         res.send("Helloo there" + employee);
     });
 });
+
+
 
 module.exports = router;
