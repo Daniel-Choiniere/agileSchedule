@@ -1,7 +1,6 @@
 // this is where we will create all of our routes for our restAPI
 
 const express = require('express');
-
 const router = express.Router();
 
 // we need to get the Employee model from our schema file

@@ -7,6 +7,8 @@ mongoose.set('useFindAndModify', false);
 // setup express app
 const app = express();
 
+app.use("/", express.static("public")); 
+
 // connect to the mongodb database using mongoose
 mongoose.connect('mongodb://localhost/employee', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
