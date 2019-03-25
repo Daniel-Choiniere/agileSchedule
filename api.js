@@ -16,8 +16,8 @@ router.get('/employees/', function(req, res, next){
 }); 
 
 // GET route, if we want to find a specific employee in the database
-router.get('/employees/:id', function(req, res, next){
-    Employee.findById({_id: req.params.id}, req.body).then(function(employee){
+router.get('/employees/:name', function(req, res, next){
+    Employee.findOne({lastName: req.params.lname}, req.body).then(function(employee){
             res.send(employee);
     });
 });    
@@ -42,7 +42,7 @@ router.put('/employees/:id', function(req, res, next){
     // find the employee by the id that the user passes in
     // update employee in database with user provided data found in req.body object parameters
     // a promise is returned (with the employee parameters) that only when the requested id user is found and updated, can the function fire
-    Employee.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+    Employee.findByIdAndRemove({_id: req.params.id}).then(function(employee){
         // refind the new employee just updated and send that 
         Employee.findOne({_id: req.params.id}).then(function(employee){
         res.send(employee);
@@ -53,11 +53,12 @@ router.put('/employees/:id', function(req, res, next){
 // delete an employee from the database
 router.delete('/employees/:id', function(req, res, next){
     // using this mongoose method it will find the specified id (i.e. req.params.id) and return a promise (.then) that will return to us the removed ID (which we can use as a parameter) and fire a function only once the id is found and removed. 
-    Employee.findByIdAndRemove({_id: req.body.idSearchAndRemove}).then(function(employee){
+    Employee.findByIdAndRemove({_id: req.params.id}).then(function(employee){
         // send back to the user the ID (employee) that has been removed
-        res.send("Helloo there" + employee);
+        res.send("HEllo there" + employee);
     });
 });
+
 
 
 

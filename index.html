@@ -13,7 +13,8 @@
     <br><br>
     <h1>Search Employee</h1>
     <form onSubmit="return searchEmployee()">
-        Last Name: <input id="lname" type="text" name="lname"><br> ID: <input id="idSearch" type="text" name="idSearch"><br>
+        Last Name: <input id="lname" type="text" name="lname"><br> 
+        ID: <input id="idSearch" type="text" name="idSearch"><br>
         <input type="submit" value="Search Employee">
     </form>
     <button id="allEmployeeButton">View All Employees</button>
@@ -29,20 +30,17 @@
         <input type="submit" value="Create New Employee Profile">
     </form>
 
-
     <h1>Modify Employee</h1>
     <form method="PUT" action "/modifyEmployee">
         First Name: <input id="fnameChange" type="text" name="fnameChange"><br> Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
         <input type="submit" value="Modify Employee Profile">
     </form>
 
-
     <h1>Remove Employee</h1>
     <form method="DELETE" action "http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
-        ID: <input id="id" type="number" name="id"><br>
+        ID: <input id="id" type="text" name="id"><br>
         <input type="submit" value="Remove employee">
     </form>
-
 
     <div id="users"></div>
 
