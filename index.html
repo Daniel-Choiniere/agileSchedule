@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
     <title>Employee Hour Tracker</title>
     <meata charset="UTF-8">
@@ -10,34 +11,13 @@
 
 <body>
     <br><br>
-    <h1>View Current Employees</h1>
-    <button id="allEmployeeButton">View All Employees</button>
-    
-    
-
-
-<form onSubmit="return process();">
-    URL: <input type="text" name="url" id="url"> <input type="submit" value="go">
-</form>
-    
-    
-    <script>
-    function process() {
-        var url = "https://cors.io/?https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/" + document.getElementById("idSearch").value;
-        location.href = url;
-        console.log(url);
-        return false;
-        
-    }
-    </script>
-    
     <h1>Search Employee</h1>
-    <form onSubmit="return process()">
-        Last Name: <input id="lname" type="text" name="lname"><br>
-        ID: <input id="idSearch" type="text" name="idSearch"><br>
+    <form onSubmit="return searchEmployee()">
+        Last Name: <input id="lname" type="text" name="lname"><br> ID: <input id="idSearch" type="text" name="idSearch"><br>
         <input type="submit" value="Search Employee">
     </form>
-    
+    <button id="allEmployeeButton">View All Employees</button>
+
     <h1>Add New Employee</h1>
     <form method="POST" action="http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
         <label>First Name:<input type="text" name="fname" required></label>
@@ -48,37 +28,29 @@
         <br>
         <input type="submit" value="Create New Employee Profile">
     </form>
-    
-    
+
+
     <h1>Modify Employee</h1>
-    <form method="PUT" action"/modifyEmployee">
-        First Name: <input id="fnameChange" type="text" name="fnameChange"><br>
-        Last Name: <input id="lnameChange" type="text" name="lnameChange"><br>
-        Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
+    <form method="PUT" action "/modifyEmployee">
+        First Name: <input id="fnameChange" type="text" name="fnameChange"><br> Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
         <input type="submit" value="Modify Employee Profile">
     </form>
-    
+
+
     <h1>Remove Employee</h1>
-    <form method="DELETE" action"http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
+    <form method="DELETE" action "http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
         ID: <input id="id" type="number" name="id"><br>
         <input type="submit" value="Remove employee">
     </form>
 
-    
-<script>
-    function createEmployee() {
-        var fname = document.getElementById("fname").value;
-        document.getElementById("users").innerHTML = fname;
-        
-        var lname = document.getElementById("lname").value;
-        document.getElementById("users2").innerHTML = lname;
-    }
-</script>
-    
+
     <div id="users"></div>
-    <div id="users2"></div>
-    
+
     <script type="text/javascript" src="./allemployees.js"></script>
+    <script type="text/javascript" src="./searchEmployee.js"></script>
 </body>
 
 </html>
+
+    
+    

@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 // create the employee schema
 const employeeSchema = new Schema({
-    name: {
+    firstName: {
         type: String
     },
-    id: {
-        type: Number,
+    lastName: {
+        type: String
+    },
+    hourlyPayRate: {
+        type: Number
     },
     timeIn: {
         type: String,
