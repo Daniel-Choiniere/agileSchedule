@@ -15,20 +15,20 @@ router.get('/employees/', function(req, res, next){
 }); 
 
 // GET route, if we want to find a specific employee in the database
-router.get('/employees/:name', function(req, res, next){
-    Employee.findOne({lastName: req.params.lname}, req.body).then(function(employee){
+router.get('/employees/:id', function(req, res, next){
+    Employee.findById({_id: req.params.id}, req.body).then(function(employee){
             res.send(employee);
     });
-});    
+});        
 
 // POST route, add a new employee to the database
 router.post('/employees', function(req, res, next){
     // create a new instance of a employee record
     Employee.create(req.body).then(function(employee){
         // sends a JSON response  back to the user who requested the information so they have a confirmations that data is in the database
-            firstName: req.body.fname
-            lastName: req.body.lname
-            hourlyRate: req.body.payrate
+            firstName: req.body.fname;
+            lastName: req.body.lname;
+            hourlyRate: req.body.payrate;
       
         res.send(employee);
         // if an error is found (i.e. no required name property sent with db data) it will catch it and run the next function

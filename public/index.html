@@ -17,18 +17,23 @@
         ID: <input id="idSearch" type="text" name="idSearch"><br>
         <input type="submit" value="Search Employee">
     </form>
+    
     <button id="allEmployeeButton">View All Employees</button>
+    
+    <div id="users"></div>
+    <div id="users1"></div>
 
     <h1>Add New Employee</h1>
-    <form method="POST" action="http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
-        <label>First Name:<input type="text" name="fname" required></label>
-        <br>
-        <label>Last Name:<input type="text" name="lname" required></label>
-        <br>
-        <label>Hourly Rate:<input type="text" name="payrate" required></label>
-        <br>
-        <input type="submit" value="Create New Employee Profile">
+    <form onsubmit="makePOSTRequest(); return false">
+        <label>First Name:<input id="fname" type="text" name="fname" required></label><br>
+        <label>Last Name:<input id="lname" type="text" name="lname" required></label><br>
+        <label>Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
+        <button onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
     </form>
+
+    <div id="postResponse"></div>
+
+
 
     <h1>Modify Employee</h1>
     <form method="PUT" action "/modifyEmployee">
@@ -43,9 +48,11 @@
     </form>
 
     <div id="users"></div>
-
+    <div id="users1"></div>
+    
     <script type="text/javascript" src="../allemployees.js"></script>
     <script type="text/javascript" src="../searchEmployee.js"></script>
+    <script type="text/javascript" src="../createEmployee.js"></script>
 </body>
 
 </html>

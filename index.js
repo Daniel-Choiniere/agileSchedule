@@ -1,5 +1,4 @@
 const express = require('express');
-const Employee = require('./employee');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
@@ -28,6 +27,6 @@ app.use(function(err, req, res, next) {
 });
 
 // set up to listen for requests
-app.listen(process.env.PORT || 4000, function() {
+app.listen(process.env.PORT, function() {
     console.log('Now listening for requests');
 });
