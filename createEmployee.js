@@ -15,7 +15,7 @@
     const data = {
     	"firstName": document.getElementById("fname").value,
     	"lastName": document.getElementById("lname").value,
-    	"hourlyPayRate": document.getElementById("payrate").value,
+    	"hourlyPayRate": document.getElementById("hourlyPayRate").value
     };
     console.log(data);
     xhttp.send(JSON.stringify(data));                                                   
