@@ -10,18 +10,20 @@
 </head>
 
 <body>
+    <!-- Full background image of clock -->
+    <section class="home-hero" style="background-image: url(https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); height: 800px; background-size: cover; background-position-y: center">
     <br><br>
+    
     <h1>Search Employee</h1>
     <form onSubmit="return searchEmployee()">
-        Last Name: <input id="lastName" type="text" name="lastName"><br> 
+        <!--Last Name: <input id="lastName" type="text" name="lastName"><br> -->
         ID: <input id="idSearch" type="text" name="idSearch"><br>
         <input type="submit" value="Search Employee">
     </form>
     
     <button id="allEmployeeButton">View All Employees</button>
-    
     <div id="users"></div>
-    <div id="users1"></div>
+    <!--<div id="users1"></div>-->
 
     <h1>Add New Employee</h1>
     <form onsubmit="return false">
@@ -30,15 +32,17 @@
         <label>Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
         <button onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
     </form>
-
     <div id="postResponse"></div>
-
-
-
+    
     <h1>Modify Employee</h1>
-    <form method="PUT" action "/modifyEmployee">
-        First Name: <input id="fnameChange" type="text" name="fnameChange"><br> Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> Hourly Rate: <input id="salaryChange" type="number" name="salaryChange"><br>
-        <input type="submit" value="Modify Employee Profile">
+    <form onsubmit="return false">
+        <strong>ID Of Employee to Modify:</strong> <input id="modifyID" type="text" name="modifyID"><br><br>
+        First Name: <input id="fnameChange" type="text" name="fnameChange"><br> 
+        Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> 
+        Hourly Rate: <input id="salaryChange" type="text" name="salaryChange"><br>
+        Time In: <input id="timeInChange" type="text" name="salaryChange"><br>
+        Time Out: <input id="timeOutChange" type="text" name="salaryChange"><br>
+        <button onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
     </form>
 
     <h1>Remove Employee</h1>
