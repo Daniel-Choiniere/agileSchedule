@@ -3,21 +3,28 @@
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this);
-                document.getElementById("postResponse").innerHTML = this.responseText;
-                document.getElementById("fname").value = "";
-                document.getElementById("lname").value = "";
-                document.getElementById("hourlyPayRate").value = "";
+                document.getElementById("modifyResponse").innerHTML = this.responseText;
+                // document.getElementById("modifyID").value = "";
+                // document.getElementById("fnameChange").value = "";
+                // document.getElementById("lnameChange").value = "";
+                // document.getElementById("salaryChange").value = "";
+                // document.getElementById("timeInChange").value = "";
+                // document.getElementById("timeOutChange").value = "";
        }
     };
     // open(method, url, async)
-    xhttp.open("POST", "https://cors-anywhere.herokuapp.com/https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/", true);
+    let url = "https://cors-anywhere.herokuapp.com/https://careerdevs18-liftedresearch.c9users.io:8080/api/employees/" + document.getElementById("modifyID").value;
+    xhttp.open("PUT", url, true);
     
     // set header to match get request
     xhttp.setRequestHeader("Content-type", "application/json");
     const data = {
-    	"firstName": document.getElementById("fname").value,
-    	"lastName": document.getElementById("lname").value,
-    	"hourlyPayRate": document.getElementById("hourlyPayRate").value
+    	"firstName": document.getElementById("fnameChange").value,
+    	"lastName": document.getElementById("lnameChange").value,
+    	"hourlyPayRate": document.getElementById("salaryChange").value,
+    	"timeIn": document.getElementById("timeInChange").value,
+    	"timeOut": document.getElementById("timeOutChange").value
+    	
     };
     // console.log(data);
     xhttp.send(JSON.stringify(data));                                              

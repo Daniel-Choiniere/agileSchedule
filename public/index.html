@@ -40,10 +40,11 @@
         First Name: <input id="fnameChange" type="text" name="fnameChange"><br> 
         Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> 
         Hourly Rate: <input id="salaryChange" type="text" name="salaryChange"><br>
-        Time In: <input id="timeInChange" type="text" name="salaryChange"><br>
-        Time Out: <input id="timeOutChange" type="text" name="salaryChange"><br>
+        Time In: <input id="timeInChange" type="text" name="timeInChange"><br>
+        Time Out: <input id="timeOutChange" type="text" name="timeOutChange"><br>
         <button onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
     </form>
+    <div id="modifyResponse"></div>
 
     <h1>Remove Employee</h1>
     <form method="DELETE" action "http://careerdevs18-liftedresearch.c9users.io:8080/api/employees/">
@@ -57,6 +58,7 @@
     <script type="text/javascript" src="../allemployees.js"></script>
     <script type="text/javascript" src="../searchEmployee.js"></script>
     <script type="text/javascript" src="../createEmployee.js"></script>
+    <script type="text/javascript" src="../modifyEmployee.js"></script>
 </body>
 
 </html>
