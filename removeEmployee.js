@@ -6,7 +6,7 @@ function removeEmployee() {
     xhr.onload = function () {
     	var users = JSON.parse(xhr.responseText);
     	if (xhr.readyState == 4 && xhr.status == "200") {
-    		document.getElementById("removedEmployee").innerHTML = this.responseText + "removed";
+    		console.log(this.responseText);
     	} else {
     		console.error(users);
     	}

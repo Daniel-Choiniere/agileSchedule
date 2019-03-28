@@ -37,7 +37,7 @@ router.put('/employees/:id', function(req, res, next){
     // find the employee by the id that the user passes in
     // update employee in database with user provided data found in req.body object parameters
     // a promise is returned (with the employee parameters) that only when the requested id user is found and updated, can the function fire
-    Employee.findByIdAndRemove({_id: req.params.id}).then(function(employee){
+    Employee.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
         // refind the new employee just updated and send that 
         Employee.findOne({_id: req.params.id}).then(function(employee){
         res.send(employee);

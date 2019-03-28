@@ -2,3 +2,11 @@ body {
     text-align: center;
     background: #D7E0E5;
 }
+
+.titles {
+    font-family: 'Francois One', sans-serif;
+}
+
+.subtitles {
+    font-family: 'Noto Sans', sans-serif;
+}

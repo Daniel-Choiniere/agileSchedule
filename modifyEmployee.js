@@ -18,7 +18,7 @@
     
     // set header to match get request
     xhttp.setRequestHeader("Content-type", "application/json");
-    const data = {
+    const newData = {
     	"firstName": document.getElementById("fnameChange").value,
     	"lastName": document.getElementById("lnameChange").value,
     	"hourlyPayRate": document.getElementById("salaryChange").value,
@@ -27,5 +27,5 @@
     	
     };
     // console.log(data);
-    xhttp.send(JSON.stringify(data));                                              
+    xhttp.send(JSON.stringify(newData));                                              
 }

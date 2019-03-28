@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
     <title>Employee Hour Tracker</title>
     <meata charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One|Noto+Sans|Ubuntu+Condensed" rel="stylesheet">
 </head>
 
 <body>
     <!-- Full background image of clock -->
     <section class="home-hero" style="background-image: url(https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); height: 800px; background-size: cover; background-position-y: center">
     <br><br>
+    <div>
+        <h1 class="titles">SEARCH EMPLOYEE</h1>
+        <form onSubmit="return searchEmployee()">
+            <!--Last Name: <input id="lastName" type="text" name="lastName"><br> -->
+            ID: <input class="subtitles" id="idSearch" type="text" name="idSearch"><br>
+            <input type="submit" value="SEARCH EMPLOYEE">
+        </form>
+        <button id="allEmployeeButton">VIEW ALL EMPLOYEES</button>
+        <div id="users"></div>
+        <br>
+        
+        <h1 class="titles">ADD NEW EMPLOYEE</h1>
+        <form onsubmit="return false">
+            <label class="subtitles">First Name:<input id="fname" type="text" name="fname" required></label><br>
+            <label class="subtitles">Last Name:<input id="lname" type="text" name="lname" required></label><br>
+            <label class="subtitles">Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
+            <button onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
+        </form>
+        <div id="postResponse"></div>
+        <br>
+        
+        <h1 class="titles">MODIFY EMPLOYEE</h1>
+        <form onsubmit="return false">
+            <strong>ID of Employee to Modify:</strong> <input id="modifyID" type="text" name="modifyID"><br><br>
+                <label class="subtitles">First Name: <input id="fnameChange" type="text" name="fnameChange"></label><br> 
+                <label class="subtitles">Last Name: <input id="lnameChange" type="text" name="lnameChange"></label><br> 
+                <label class="subtitles">Hourly Rate: <input id="salaryChange" type="text" name="salaryChange"></label><br>
+                <label class="subtitles">Time In: <input id="timeInChange" type="text" name="timeInChange"></label><br>
+                <label class="subtitles">Time Out: <input id="timeOutChange" type="text" name="timeOutChange"></label><br>
+                <button onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
+            </form>
+        <div id="modifyResponse"></div>
+        <br>
     
-    <h1>SEARCH EMPLOYEE</h1>
-    <form onSubmit="return searchEmployee()">
-        <!--Last Name: <input id="lastName" type="text" name="lastName"><br> -->
-        ID: <input id="idSearch" type="text" name="idSearch"><br>
-        <input type="submit" value="SEARCH EMPLOYEE">
-    </form>
-    
-    <button id="allEmployeeButton">VIEW ALL EMPLOYEES</button>
-    <div id="users"></div>
-    <!--<div id="users1"></div>-->
-
-    <h1>ADD NEW EMPLOYEE</h1>
-    <form onsubmit="return false">
-        <label>First Name:<input id="fname" type="text" name="fname" required></label><br>
-        <label>Last Name:<input id="lname" type="text" name="lname" required></label><br>
-        <label>Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
-        <button onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
-    </form>
-    <div id="postResponse"></div>
-    
-    <h1>MODIFY EMPLOYEE</h1>
-    <form onsubmit="return false">
-        <strong>ID Of Employee to Modify:</strong> <input id="modifyID" type="text" name="modifyID"><br><br>
-        First Name: <input id="fnameChange" type="text" name="fnameChange"><br> 
-        Last Name: <input id="lnameChange" type="text" name="lnameChange"><br> 
-        Hourly Rate: <input id="salaryChange" type="text" name="salaryChange"><br>
-        Time In: <input id="timeInChange" type="text" name="timeInChange"><br>
-        Time Out: <input id="timeOutChange" type="text" name="timeOutChange"><br>
-        <button onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
-    </form>
-    <div id="modifyResponse"></div>
-
-    <h1>REMOVE EMPLOYEE</h1>
-    <form onsubmit="return false">
-        ID: <input id="deleteID" type="text" name="deleteID"><br>
-        <button onclick="removeEmployee()">DELETE EMPLOYEE PROFILE</button>
-    </form>
-    <div id="removedEmployee"></div>
-    
-    <div id="users"></div>
-    <div id="users1"></div>
+        <h1 class="titles">REMOVE EMPLOYEE</h1>
+        <form onsubmit="return false">
+            <label>ID: <input id="deleteID" type="text" name="deleteID"></label><br>
+            <button onclick="removeEmployee()">DELETE EMPLOYEE PROFILE</button>
+        </form>
+        
+        <div id="users"></div>
+        <div id="users1"></div>
+    </div>
     
     <script type="text/javascript" src="../allemployees.js"></script>
     <script type="text/javascript" src="../searchEmployee.js"></script>
