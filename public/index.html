@@ -5,63 +5,76 @@
     <title>Employee Hour Tracker</title>
     <meata charset="UTF-8">
     <meta http-equiv="x-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../styles.css" type="text/css">
+    <link rel="stylesheet" href="../public/styles.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Noto+Sans|Ubuntu+Condensed" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Full background image of clock -->
+     <!--Full background image of clock -->
     <section class="home-hero" style="background-image: url(https://images.pexels.com/photos/707582/pexels-photo-707582.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); height: 800px; background-size: cover; background-position-y: center">
     <br><br>
-    <div>
-        <h1 class="titles">SEARCH EMPLOYEE</h1>
-        <form onSubmit="return searchEmployee()">
-            <!--Last Name: <input id="lastName" type="text" name="lastName"><br> -->
-            ID: <input class="subtitles" id="idSearch" type="text" name="idSearch"><br>
-            <input type="submit" value="SEARCH EMPLOYEE">
-        </form>
-        <button id="allEmployeeButton">VIEW ALL EMPLOYEES</button>
-        <div id="users"></div>
-        <br>
-        
-        <h1 class="titles">ADD NEW EMPLOYEE</h1>
-        <form onsubmit="return false">
-            <label class="subtitles">First Name:<input id="fname" type="text" name="fname" required></label><br>
-            <label class="subtitles">Last Name:<input id="lname" type="text" name="lname" required></label><br>
-            <label class="subtitles">Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
-            <button onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
-        </form>
-        <div id="postResponse"></div>
-        <br>
-        
-        <h1 class="titles">MODIFY EMPLOYEE</h1>
-        <form onsubmit="return false">
-            <strong>ID of Employee to Modify:</strong> <input id="modifyID" type="text" name="modifyID"><br><br>
-                <label class="subtitles">First Name: <input id="fnameChange" type="text" name="fnameChange"></label><br> 
-                <label class="subtitles">Last Name: <input id="lnameChange" type="text" name="lnameChange"></label><br> 
-                <label class="subtitles">Hourly Rate: <input id="salaryChange" type="text" name="salaryChange"></label><br>
-                <label class="subtitles">Time In: <input id="timeInChange" type="text" name="timeInChange"></label><br>
-                <label class="subtitles">Time Out: <input id="timeOutChange" type="text" name="timeOutChange"></label><br>
-                <button onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
+    <div class="grid-container">
+        <div class="grid-item item1">
+            <h1 class="titles">SEARCH EMPLOYEE</h1>
+            <form onSubmit="return searchEmployee()">
+                ID: <input class="subtitles" id="idSearch" type="text" name="idSearch"><br><br>
+                <input class="example_e" type="submit" value="SEARCH EMPLOYEE"><br>
             </form>
-        <div id="modifyResponse"></div>
-        <br>
-    
+            <br>
+            <button class="example_e" id="allEmployeeButton">VIEW ALL EMPLOYEES</button>
+            <div id="users"></div>
+            <br>
+            <br>
+        </div>
+        <div class="grid-item item3">
+            <h1 class="titles">ADD NEW EMPLOYEE</h1>
+            <form onsubmit="return false">
+                <label class="subtitles">First Name:<input id="fname" type="text" name="fname" required></label><br>
+                <label class="subtitles">Last Name:<input id="lname" type="text" name="lname" required></label><br>
+                <label class="subtitles">Hourly Rate:<input id="hourlyPayRate" type="text" name="payrate" required></label><br>
+                <br>
+                <button class="example_e" onclick="makePOSTRequest()">CREATE AN EMPLOYEE PROFILE</button>
+            </form>
+            <div id="postResponse"></div>
+            <br>
+        </div>
+        
+        <!-- Update an employee -->
+        <div class="grid-item item4">
+            <h1 class="titles">MODIFY EMPLOYEE</h1>
+            <form onsubmit="return false">
+                <strong>ID of Employee to Modify:</strong> <input id="modifyID" type="text" name="modifyID" required><br>
+                    <label class="subtitles">First Name: <input id="fnameChange" type="text" name="fnameChange" required></label><br> 
+                    <label class="subtitles">Last Name: <input id="lnameChange" type="text" name="lnameChange" required></label><br> 
+                    <label class="subtitles">Hourly Rate: <input id="salaryChange" type="text" name="salaryChange" required></label><br>
+                    <label class="subtitles">Time In: <input id="timeInChange" type="text" name="timeInChange" required></label><br>
+                    <label class="subtitles">Time Out: <input id="timeOutChange" type="text" name="timeOutChange" required></label><br>
+                    <br>
+                    <button class="example_e" onclick="makeModifyRequest()">MODIFY EMPLOYEE PROFILE</button>
+                </form>
+            <div id="modifyResponse"></div>
+            <br>
+            <br>
+        </div>
+        
+        <div class="grid-item item5">
         <h1 class="titles">REMOVE EMPLOYEE</h1>
         <form onsubmit="return false">
-            <label>ID: <input id="deleteID" type="text" name="deleteID"></label><br>
-            <button onclick="removeEmployee()">DELETE EMPLOYEE PROFILE</button>
+            <label>ID: <input id="deleteID" type="text" name="deleteID"></label><br><br>
+            <button class="example_e"  onclick="removeEmployee()">DELETE EMPLOYEE PROFILE</button>
         </form>
-        
+        <br>
+        <br>
+        </div>
         <div id="users"></div>
         <div id="users1"></div>
     </div>
     
-    <script type="text/javascript" src="../allemployees.js"></script>
-    <script type="text/javascript" src="../searchEmployee.js"></script>
-    <script type="text/javascript" src="../createEmployee.js"></script>
-    <script type="text/javascript" src="../modifyEmployee.js"></script>
-    <script type="text/javascript" src="../removeEmployee.js"></script>
+    <script type="text/javascript" src="../script/allemployees.js"></script>
+    <script type="text/javascript" src="../script/searchEmployee.js"></script>
+    <script type="text/javascript" src="../script/createEmployee.js"></script>
+    <script type="text/javascript" src="../script/modifyEmployee.js"></script>
+    <script type="text/javascript" src="../script/removeEmployee.js"></script>
 </body>
 
 </html>

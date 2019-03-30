@@ -4,12 +4,12 @@
             if (this.readyState == 4 && this.status == 200) {
                 // console.log(this);
                 document.getElementById("modifyResponse").innerHTML = this.responseText;
-                // document.getElementById("modifyID").value = "";
-                // document.getElementById("fnameChange").value = "";
-                // document.getElementById("lnameChange").value = "";
-                // document.getElementById("salaryChange").value = "";
-                // document.getElementById("timeInChange").value = "";
-                // document.getElementById("timeOutChange").value = "";
+                document.getElementById("modifyID").value = "";
+                document.getElementById("fnameChange").value = "";
+                document.getElementById("lnameChange").value = "";
+                document.getElementById("salaryChange").value = "";
+                document.getElementById("timeInChange").value = "";
+                document.getElementById("timeOutChange").value = "";
        }
     };
     // open(method, url, async)
