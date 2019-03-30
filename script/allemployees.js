@@ -15,6 +15,7 @@ function loadEmployees() {
                     '<div class="user">' +
                     '<ul style="list-style: none">' +
                     '<li>'+ '<strong>' + employees[i].firstName + " " + employees[i].lastName + '</strong>' +'</li>' +
+                    '<li><strong>ID:</strong> '+ employees[i]._id +'</li>' +
                     '<li><strong>HOURLY PAY RATE:</strong> '+ employees[i].hourlyPayRate +'</li>' +
                     '<li><strong>TIME IN:</strong> '+ employees[i].timeIn +'</li>' +
                     '<li><strong>TIME OUT:</strong> '+ employees[i].timeOut +'</li>' +
